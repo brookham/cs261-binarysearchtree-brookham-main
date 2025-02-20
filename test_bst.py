@@ -61,46 +61,46 @@ class TestBinarySearchTree(unittest.TestCase):
         bst.insert(child)
         self.assertEqual(child, bst.left)
 
-    # def test_parent_child_relationship(self):
-    #     """
-    #     Test 5: Inserting a node into a single-level tree makes the new node
-    #     a child of its parent node 
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     child = BinarySearchTree(1)
-    #     bst.insert(child)
-    #     self.assertEqual(bst, child.parent)
+    def test_parent_child_relationship(self):
+        """
+        Test 5: Inserting a node into a single-level tree makes the new node
+        a child of its parent node 
+        """
+        bst = BinarySearchTree(5)
+        child = BinarySearchTree(1)
+        bst.insert(child)
+        self.assertEqual(bst, child.parent)
         
-    # def test_insert_single_equal(self):
-    #     """
-    #     Test 6: Inserting a node into a single-level tree appends the new node as the
-    #     left child, when the new node value is equal to the the parent's key.
-    #     (A new node whose key is <= parent key becomes the left child.)
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     child = BinarySearchTree(5)
-    #     bst.insert(child)
-    #     self.assertEqual(child, bst.left)
-    #     self.assertEqual(bst, child.parent)
+    def test_insert_single_equal(self):
+        """
+        Test 6: Inserting a node into a single-level tree appends the new node as the
+        left child, when the new node value is equal to the the parent's key.
+        (A new node whose key is <= parent key becomes the left child.)
+        """
+        bst = BinarySearchTree(5)
+        child = BinarySearchTree(5)
+        bst.insert(child)
+        self.assertEqual(child, bst.left)
+        self.assertEqual(bst, child.parent)
 
-    # def test_insert_single_greater(self):
-    #     """
-    #     Test 7: Inserting a node into a single-level tree appends the new node as the
-    #     right child, when the new node key is greater than the parent's key.
-    #     (A new node whose key is > parent key becomes the right child.)
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     child = BinarySearchTree(7)
-    #     bst.insert(child)
-    #     self.assertEqual(child, bst.right)
-    #     self.assertEqual(bst, child.parent)
+    def test_insert_single_greater(self):
+        """
+        Test 7: Inserting a node into a single-level tree appends the new node as the
+        right child, when the new node key is greater than the parent's key.
+        (A new node whose key is > parent key becomes the right child.)
+        """
+        bst = BinarySearchTree(5)
+        child = BinarySearchTree(7)
+        bst.insert(child)
+        self.assertEqual(child, bst.right)
+        self.assertEqual(bst, child.parent)
 
-    # def test_search_single_none(self):
-    #     """
-    #     Test 8: Searching a single-level tree for a key that doesn't exist returns None.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     self.assertIsNone(bst.search(-999))
+    def test_search_single_none(self):
+        """
+        Test 8: Searching a single-level tree for a key that doesn't exist returns None.
+        """
+        bst = BinarySearchTree(5)
+        self.assertIsNone(bst.search(-999))
 
     # def test_search_single_one(self):
     #     """
