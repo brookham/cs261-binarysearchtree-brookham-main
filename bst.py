@@ -24,7 +24,20 @@ class BinarySearchTree:
             self.right = child
             child.parent = self
 
-    def search(self):
+    def search(self, key):
+        if self.key != key:
+            return None
+        elif self.key == key:
+            return self
+        elif key < self.key:
+            return self.search(key,self.left)
+        else:
+            return self.search(key,self.right)
         
+
+    
+
+
+
             
         
