@@ -109,20 +109,20 @@ class TestBinarySearchTree(unittest.TestCase):
         bst = BinarySearchTree(5)
         self.assertEqual(bst, bst.search(5))
 
-    # def test_delete_single_nonexistent(self):
-    #     """
-    #     Test 10: Deleting a node with a key that does not exist returns the root node of
-    #     the single-level tree.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     self.assertEqual(bst, bst.delete(-999))
+    def test_delete_single_nonexistent(self):
+        """
+        Test 10: Deleting a node with a key that does not exist returns the root node of
+        the single-level tree.
+        """
+        bst = BinarySearchTree(5)
+        self.assertEqual(bst, bst.delete(-999))
 
-    # def test_delete_single(self):
-    #     """
-    #     Test 11: Deleting the node of a single-level tree returns the node's parent.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     self.assertIsNone(bst.delete(5))
+    def test_delete_single(self):
+        """
+        Test 11: Deleting the node of a single-level tree returns the node's parent.
+        """
+        bst = BinarySearchTree(5)
+        self.assertIsNone(bst.delete(5))
 
     # # """
     # # Toddler, two-level trees. (Depth of one.)
