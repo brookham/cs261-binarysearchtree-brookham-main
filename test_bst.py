@@ -171,82 +171,82 @@ class TestBinarySearchTree(unittest.TestCase):
         self.assertEqual(child, bst.left.right)
         self.assertEqual(left, child.parent)
 
-    # def test_insert_two_greater_right(self):
-    #     """
-    #     Test 14: Inserting a node with a key that is greater than the right child's key
-    #     appends the new node as the right child's right child.
-    #       5             5
-    #      / \    =>     / \
-    #     3   7         3   7
-    #                        \
-    #                         9
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     left = BinarySearchTree(3)
-    #     right = BinarySearchTree(7)
-    #     child = BinarySearchTree(9)
-    #     bst.insert(left)
-    #     bst.insert(right)
-    #     bst.insert(child)
-    #     self.assertEqual(child, bst.right.right)
-    #     self.assertEqual(right, child.parent)
+    def test_insert_two_greater_right(self):
+        """
+        Test 14: Inserting a node with a key that is greater than the right child's key
+        appends the new node as the right child's right child.
+          5             5
+         / \    =>     / \
+        3   7         3   7
+                           \
+                            9
+        """
+        bst = BinarySearchTree(5)
+        left = BinarySearchTree(3)
+        right = BinarySearchTree(7)
+        child = BinarySearchTree(9)
+        bst.insert(left)
+        bst.insert(right)
+        bst.insert(child)
+        self.assertEqual(child, bst.right.right)
+        self.assertEqual(right, child.parent)
 
-    # def test_insert_two_smaller_right(self):
-    #     """
-    #     Test 15: Inserting a node with a key that is less than the right child's key
-    #     (and greater than the parent/root) appends the new node as the right
-    #     child's left child.
-    #       5             5
-    #      / \    =>     / \
-    #     3   7         3   7
-    #                      /
-    #                     6
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     left = BinarySearchTree(3)
-    #     right = BinarySearchTree(7)
-    #     child = BinarySearchTree(6)
-    #     bst.insert(left)
-    #     bst.insert(right)
-    #     bst.insert(child)
-    #     self.assertEqual(child, bst.right.left)
-    #     self.assertEqual(right, child.parent)
+    def test_insert_two_smaller_right(self):
+        """
+        Test 15: Inserting a node with a key that is less than the right child's key
+        (and greater than the parent/root) appends the new node as the right
+        child's left child.
+          5             5
+         / \    =>     / \
+        3   7         3   7
+                         /
+                        6
+        """
+        bst = BinarySearchTree(5)
+        left = BinarySearchTree(3)
+        right = BinarySearchTree(7)
+        child = BinarySearchTree(6)
+        bst.insert(left)
+        bst.insert(right)
+        bst.insert(child)
+        self.assertEqual(child, bst.right.left)
+        self.assertEqual(right, child.parent)
 
-    # def test_search_two_basics(self):
-    #     """
-    #     Test 16: Searching a two-level tree for a key that doesn't exist returns None.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     left = BinarySearchTree(3)
-    #     right = BinarySearchTree(7)
-    #     bst.insert(left)
-    #     bst.insert(right)
-    #     self.assertIsNone(bst.search(-999))
+    def test_search_two_basics(self):
+        """
+        Test 16: Searching a two-level tree for a key that doesn't exist returns None.
+        """
+        bst = BinarySearchTree(5)
+        left = BinarySearchTree(3)
+        right = BinarySearchTree(7)
+        bst.insert(left)
+        bst.insert(right)
+        self.assertIsNone(bst.search(-999))
 
-    # def test_search_two_root(self):
-    #     """
-    #     Test 17: Searching a two-level tree for a key that exists in the root returns
-    #     the root.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     left = BinarySearchTree(3)
-    #     right = BinarySearchTree(7)
-    #     bst.insert(left)
-    #     bst.insert(right)
-    #     self.assertEqual(bst, bst.search(5))
+    def test_search_two_root(self):
+        """
+        Test 17: Searching a two-level tree for a key that exists in the root returns
+        the root.
+        """
+        bst = BinarySearchTree(5)
+        left = BinarySearchTree(3)
+        right = BinarySearchTree(7)
+        bst.insert(left)
+        bst.insert(right)
+        self.assertEqual(bst, bst.search(5))
 
-    # def test_search_two_left(self):
-    #     """
-    #     Test 18: Searching a two-level tree for a key that exists in the left subtree
-    #     returns that left node / subtree.
-    #     Hint: Try a brutish, 'naive' approach.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     left = BinarySearchTree(3)
-    #     right = BinarySearchTree(7)
-    #     bst.insert(left)
-    #     bst.insert(right)
-    #     self.assertEqual(left, bst.search(3))
+    def test_search_two_left(self):
+        """
+        Test 18: Searching a two-level tree for a key that exists in the left subtree
+        returns that left node / subtree.
+        Hint: Try a brutish, 'naive' approach.
+        """
+        bst = BinarySearchTree(5)
+        left = BinarySearchTree(3)
+        right = BinarySearchTree(7)
+        bst.insert(left)
+        bst.insert(right)
+        self.assertEqual(left, bst.search(3))
 
     # def test_search_two_right(self):
     #     """

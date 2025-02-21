@@ -31,14 +31,18 @@ class BinarySearchTree:
                 self.right.insert(node)
 
     def search(self, key):
-        if self.key != key:
-            return None
-        elif self.key == key:
+        if self.key == key:
             return self
         elif key < self.key:
-            return self.search(key, self.left)
+            if self.left != None:
+                return self.left.search(key)
+            else:
+                return None
         else:
-            return self.search(key, self.right)
+            if self.right != None:
+                return self.right.search(key)
+            else:
+                return None
         
     def delete(self, key):
         if self.search(key) == None:
