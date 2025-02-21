@@ -45,14 +45,19 @@ class BinarySearchTree:
                 return None
         
     def delete(self, key):
-        if self.search(key) == None:
+        node = self.search(key)
+        if node == None:
             return self
-        elif self.search(key) == self:
-            return self.parent
-
-    
-
-
-
-            
+        #deleting leaf node
         
+
+
+
+
+
+
+
+
+
+
+
