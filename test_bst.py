@@ -368,10 +368,10 @@ class TestBinarySearchTree(unittest.TestCase):
         self.assertEqual(3, bst.left.key)
         self.assertIsNone(bst.right)
 
-    # # """
-    # # Teen-age, three-level trees. (Depth of two.)
-    # # Hint: Don't just curse - be recursive.
-    # # """
+    # """
+    # Teen-age, three-level trees. (Depth of two.)
+    # Hint: Don't just curse - be recursive.
+    # """
 
     # def test_insert_three_smaller_leftmost_leaf(self):
     #     """

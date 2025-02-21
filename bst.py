@@ -62,22 +62,32 @@ class BinarySearchTree:
         if node.left == None or node.right == None:
             if node.left:
                 left_child = node.left
-                left_child.parent = None
+                left_child.parent = node.parent
                 return left_child
             else:
                 right_child = node.right
-                right_child.parent = None
+                right_child.parent = node.parent
                 return right_child
         
+        #two level node with two children
+        if node.left and node.right:
+            left_child = node.left
+            right_child = node.right
+            left_child.parent = right_child
+            
+            right_child.parent = None
+            return left_child
+
         successor = node.right
-        while successor.left != None:
+        while successor.left:
             successor = successor.left
-        node.key = successor.key
-        return node.right.delete(successor.key)
+            node.key = successor.key
+            node.right = node.right.delete(successor.key)
+        return successor
         
 
     def is_leaf(self):
-        if self.left == None or self.right == None:
+        if self.left == None and self.right == None:
             return True
 
 
