@@ -68,6 +68,13 @@ class BinarySearchTree:
                 right_child = node.right
                 right_child.parent = None
                 return right_child
+        
+        successor = node.right
+        while successor.left != None:
+            successor = successor.left
+        node.key = successor.key
+        return node.right.delete(successor.key)
+        
 
     def is_leaf(self):
         if self.left == None or self.right == None:
