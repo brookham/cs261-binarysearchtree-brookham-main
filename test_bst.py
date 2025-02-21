@@ -124,30 +124,30 @@ class TestBinarySearchTree(unittest.TestCase):
         bst = BinarySearchTree(5)
         self.assertIsNone(bst.delete(5))
 
+    # """
+    # Toddler, two-level trees. (Depth of one.)
     # # """
-    # # Toddler, two-level trees. (Depth of one.)
-    # # # """
 
-    # def test_insert_two_smaller_left(self):
-    #     """
-    #     Test 12: Inserting a node with a key that is less than the left child's key appends
-    #     the new node as the left child's left child.
-    #       5             5
-    #      / \    =>     / \
-    #     3   7         3   7
-    #                  /
-    #                 1
-    #     Hint: Nest your logic. Delegate with recursion.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     left = BinarySearchTree(3)
-    #     right = BinarySearchTree(7)
-    #     child = BinarySearchTree(1)
-    #     bst.insert(left)
-    #     bst.insert(right)
-    #     bst.insert(child)
-    #     self.assertEqual(child, bst.left.left)
-    #     self.assertEqual(left, child.parent)
+    def test_insert_two_smaller_left(self):
+        """
+        Test 12: Inserting a node with a key that is less than the left child's key appends
+        the new node as the left child's left child.
+          5             5
+         / \    =>     / \
+        3   7         3   7
+                     /
+                    1
+        Hint: Nest your logic. Delegate with recursion.
+        """
+        bst = BinarySearchTree(5)
+        left = BinarySearchTree(3)
+        right = BinarySearchTree(7)
+        child = BinarySearchTree(1)
+        bst.insert(left)
+        bst.insert(right)
+        bst.insert(child)
+        self.assertEqual(child, bst.left.left)
+        self.assertEqual(left, child.parent)
 
     # def test_insert_two_greater_left(self):
     #     """
