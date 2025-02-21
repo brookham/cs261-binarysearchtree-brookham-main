@@ -17,16 +17,18 @@ class BinarySearchTree:
         self.key = key
 
     def insert(self, node):
-        if (node.key <= self.key) and (self.left == None):
-            self.left = node
-            node.parent = self
-        elif self.left != None:
-            self.left.insert(node)
-        elif (node.key >= self.key) and (self.right == None):
-            self.right = node
-            node.parent = self
-        else:
-            return self.insert(node)
+        if (node.key <= self.key):
+            if (self.left == None):
+                self.left = node
+                node.parent = self
+            else:
+                self.left.insert(node)
+        else: 
+            if (self.right == None):
+                self.right = node
+                node.parent = self
+            else:
+                self.right.insert(node)
 
     def search(self, key):
         if self.key != key:

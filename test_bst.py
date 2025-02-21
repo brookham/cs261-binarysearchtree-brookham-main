@@ -149,27 +149,27 @@ class TestBinarySearchTree(unittest.TestCase):
         self.assertEqual(child, bst.left.left)
         self.assertEqual(left, child.parent)
 
-    # def test_insert_two_greater_left(self):
-    #     """
-    #     Test 13: Inserting a node with a key that is greater than the left child's key
-    #     (and less than the parent/root) appends the new node as the left child's
-    #     right child.
-    #       5             5
-    #      / \    =>     / \
-    #     3   7         3   7
-    #                    \
-    #                     4
-    #     Hint: If this test immediately passes, you are on a happy path.
-    #     """
-    #     bst = BinarySearchTree(5)
-    #     left = BinarySearchTree(3)
-    #     right = BinarySearchTree(7)
-    #     child = BinarySearchTree(4)
-    #     bst.insert(left)
-    #     bst.insert(right)
-    #     bst.insert(child)
-    #     self.assertEqual(child, bst.left.right)
-    #     self.assertEqual(left, child.parent)
+    def test_insert_two_greater_left(self):
+        """
+        Test 13: Inserting a node with a key that is greater than the left child's key
+        (and less than the parent/root) appends the new node as the left child's
+        right child.
+          5             5
+         / \    =>     / \
+        3   7         3   7
+                       \
+                        4
+        Hint: If this test immediately passes, you are on a happy path.
+        """
+        bst = BinarySearchTree(5)
+        left = BinarySearchTree(3)
+        right = BinarySearchTree(7)
+        child = BinarySearchTree(4)
+        bst.insert(left)
+        bst.insert(right)
+        bst.insert(child)
+        self.assertEqual(child, bst.left.right)
+        self.assertEqual(left, child.parent)
 
     # def test_insert_two_greater_right(self):
     #     """
