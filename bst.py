@@ -49,9 +49,13 @@ class BinarySearchTree:
         if node == None:
             return self
         #deleting leaf node
-        
-
-
+        if node.left == None and node.right == None:
+            if node.parent != None:
+                if node.parent.left == node:
+                    node.parent.left = None
+                else:
+                    node.parent.right = None
+            return self if node != self else None
 
 
 
