@@ -72,7 +72,7 @@ class BinarySearchTree:
         #two level node with two children
         if node.left and node.right:
             successor = node.right
-            while successor.left is not None:
+            while successor.left:
                 successor = successor.left
                 # node = successor
                 # node.right = node.right.delete(successor)
@@ -92,6 +92,15 @@ class BinarySearchTree:
     def has_right_child(self):
         if self.right != None:
             return True
+    
+    def minimum(self):
+        while self.left:
+            self = self.left
+        return self
+    
+    def pre_order(self):
+        return self
+
 
 
 
